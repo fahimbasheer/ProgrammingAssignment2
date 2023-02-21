@@ -1,0 +1,24 @@
+makeCacheMatrix <- function(x = matrix()) {
+        invrs <- NULL
+        set <- function(y) {
+                x <<- y
+                i <<- NULL
+        }
+        get <- function() x
+        setinvrs <- function(mean) m <<- mean
+        getinvrs <- function() invrs
+        list(set = set, get = get,
+             setinvrs = setinvrs,
+             getinvrs = getinvrs)
+}
+cacheSolve <- function(x, ...) {
+        invrs <= x$getinvrs()
+        if(!is.null(invrs)) {
+        message("getting cached data")
+        return(invrs)
+}
+mat <- x$get()
+invrs <- solve(mat, ...)
+x$setinvrs(invrs)
+invrs
+}
